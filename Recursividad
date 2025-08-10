@@ -1,0 +1,23 @@
+class Solution {
+    public static boolean isPowerOfTwo(int n){
+        int contador = -1;
+        long pot;
+        do{
+            contador++;
+            pot =  potencia2(contador);
+            if(n == pot){
+                return true;
+            }
+
+        }while(pot<n);
+        return false;
+    }
+
+   public static long potencia2(int x){
+        if (x == 0){
+            return 1;
+        }
+
+        return 2 * potencia2(x-1);
+    }
+}
